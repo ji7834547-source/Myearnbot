@@ -1,62 +1,80 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Earn Bot Web App</title><!-- Firebase --><script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+<title>My Earn Bot</title>
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDPYPIIXAqdr1grMGu7n5MbQ-NWutKb-uM",
-    authDomain: "my-earn-bot-36cb0.firebaseapp.com",
-    projectId: "my-earn-bot-36cb0",
-    storageBucket: "my-earn-bot-36cb0.firebasestorage.app",
-    messagingSenderId: "560798011502",
-    appId: "1:560798011502:web:d292f69fe30434d6e0567f"
-  };
+<!-- Telegram WebApp -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  const app = initializeApp(firebaseConfig);
-</script><!-- OnClick Main --><script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="391987"></script><!-- OnClick Video In-Stream --><script src="https://js.onclckvd.com/in-stream-ad-admanager/tma.js"></script><!-- Monetag --><script src='//libtl.com/sdk.js' data-zone='10155343' data-sdk='show_10155343'></script><!-- Adsterra --><script async="async" data-cfasync="false" src="//pl27787030.effectivegatecpm.com/a7ada5363b5abd90658cce37f262ed34/invoke.js"></script><style>
-  body { font-family: Arial; text-align: center; padding: 20px; }
-  #playBtn {
-    padding: 15px 25px;
-    background: blue;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  .ad-box {
-    margin: 20px 0;
-  }
-</style></head>
-<body><h2>Earn Bot Web App</h2><div class="ad-box">
-  <!-- Adsterra Box -->
-  <div id="container-a7ada5363b5abd90658cce37f262ed34"></div>
-</div><!-- Video Ad Engine Init (Spot ID added) --><script>
-window.initCdTma?.({ id: '393479' })
-  .then(show => window.showVideoAd = show)
-  .catch(e => console.log(e));
-</script><!-- MAIN BUTTON TO TRIGGER ALL ADS --><button id="playBtn" onclick="runAds()">▶ Play & Earn Ads</button>
+<!-- Firebase -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDPYPIIXAqdr1grMGu7n5MbQ-NWutKb-uM",
+  authDomain: "my-earn-bot-36cb0.firebaseapp.com",
+  projectId: "my-earn-bot-36cb0",
+  storageBucket: "my-earn-bot-36cb0.firebasestorage.app",
+  messagingSenderId: "560798011502",
+  appId: "1:560798011502:web:d292f69fe30434d6e0567f"
+};
+
+const app = initializeApp(firebaseConfig);
+</script>
+
+<!-- Monetag -->
+<script src='//libtl.com/sdk.js' data-zone='10155343' data-sdk='show_10155343'></script>
+
+<!-- OnClick Ads -->
+<script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="391987"></script>
+
+<!-- TMA In-stream ads -->
+<script src="https://js.onclckvd.com/in-stream-ad-admanager/tma.js"></script>
+
+<!-- Adsterra -->
+<script async="async" data-cfasync="false" src="//pl27787030.effectivegatecpm.com/a7ada5363b5abd90658cce37f262ed34/invoke.js"></script>
+</head>
+
+<body style="font-family:sans-serif;text-align:center;padding:30px;background:#f1f1f1;">
+
+<h2>🔥 My Earn Bot WebApp</h2>
+<p>Earn by watching Ads</p>
+
+<div id="container-a7ada5363b5abd90658cce37f262ed34"></div>
+
+<button 
+onclick="runAds()" 
+style="padding:15px 30px;font-size:20px;border:none;background:#0088ff;color:white;border-radius:10px;margin-top:20px;">
+▶ Start Earning
+</button>
+
 
 <script>
+// Telegram Init
+const tg = window.Telegram.WebApp;
+tg.expand();
+
+// TMA Init
+window.initCdTma?.({ id: "393479" }).then(show => window.showTMA = show);
+
+// MAIN BUTTON FUNCTION
 function runAds() {
-    // OnClick Ads Auto show
-    console.log("OnClick Ads Triggered");
-
-    // Video Ad
-    window.showVideoAd?.()
-        .then(() => console.log("Video Ad Played"))
-        .catch(e => console.log(e));
-
     // Monetag
-    try {
-        window.show_10155343();
-        console.log("Monetag Shown");
-    } catch(err){}
+    try { window.show_10155343(); } catch(e){}
 
-    // Adsterra already auto loads
-    console.log("Adsterra Loaded");
+    // OnClick Popup Ads
+    try { console.log("OnClick Loaded"); } catch(e){}
+
+    // Adsterra container already auto loads
+
+    // TMA
+    try { window.showTMA?.(); } catch(e){}
+
+    alert("Ads Running… Wait a moment!");
 }
-</script></body>
+</script>
+
+</body>
 </html>
